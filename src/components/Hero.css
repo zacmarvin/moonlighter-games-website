@@ -14,7 +14,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #87CEEB 0%, #98FB98 50%, #4f7942 100%);
+  background-image: url('/lawn-care-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: -1;
 }
 

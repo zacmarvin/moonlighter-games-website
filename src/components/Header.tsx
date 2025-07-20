@@ -13,7 +13,7 @@ const Header = () => {
       <div className="header-container">
         <div className="logo">
           <a href="/">
-            <span className="logo-text">Moonlighter Games</span>
+            <img src="/moonlighter-logo.svg" alt="Moonlighter Games" className="logo-image" />
           </a>
         </div>
         

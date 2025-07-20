@@ -18,18 +18,15 @@
   align-items: center;
 }
 
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #4f7942 0%, #87CEEB 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-decoration: none;
+.logo-image {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .logo a {
   text-decoration: none;
+  display: inline-block;
 }
 
 .nav-list {

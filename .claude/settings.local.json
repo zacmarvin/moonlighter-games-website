@@ -11,7 +11,11 @@
       "WebFetch(domain:www.futurlab.co.uk)",
       "Bash(mkdir:*)",
       "Bash(npm run dev:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo create:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx firebase:*)"
     ],
     "deny": []
   }
