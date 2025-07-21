@@ -15,7 +15,17 @@
       "Bash(git commit:*)",
       "Bash(gh repo create:*)",
       "Bash(npm run build:*)",
-      "Bash(npx firebase:*)"
+      "Bash(npx firebase:*)",
+      "Bash(git push:*)",
+      "Bash(ls:*)",
+      "Bash(npm init:*)",
+      "Bash(firebase functions:config:set:*)",
+      "Bash(firebase deploy:*)",
+      "Bash(firebase functions:config:get:*)",
+      "Bash(node:*)",
+      "Bash(firebase functions:log:*)",
+      "Bash(cmd /c \"npx firebase deploy --only functions\")",
+      "Bash(curl:*)"
     ],
     "deny": []
   }

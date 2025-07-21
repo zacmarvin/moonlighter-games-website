@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Newsletter subscribers - only allow read/write through Functions
+    match /newsletter_subscribers/{document} {
+      allow read: if false;
+      allow write: if false;
+    }
+    
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

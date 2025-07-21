@@ -12,6 +12,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Official Color Palette */
+  --darkest-green: #1A361F;
+  --dark-green: #2B5433;
+  --green: #589253;
+  --light-green: #8CBA6E;
+  --yellow: #FFEA21;
+  --orange: #CB760C;
 }
 
 * {
@@ -45,4 +53,17 @@ button {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
+}
+
+/* Prevent text selection on UI elements */
+.header,
+.nav-list,
+.menu-toggle,
+.btn,
+.footer,
+.social-links {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Hero.css'
 
 const Hero = () => {
@@ -14,8 +15,8 @@ const Hero = () => {
           Mow, trim, and maintain beautiful lawns in stunning detail.
         </p>
         <div className="hero-buttons">
-          <a href="#lawn-care-simulator" className="btn btn-primary">Learn More</a>
-          <a href="#news" className="btn btn-secondary">Latest News</a>
+          <Link to="/lawn-care-simulator" className="btn btn-primary">Learn More</Link>
+          <Link to="/news" className="btn btn-secondary">Latest News</Link>
         </div>
       </div>
     </section>

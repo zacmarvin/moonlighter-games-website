@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 const Header = () => {
@@ -8,21 +9,25 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
     <header className="header">
       <div className="header-container">
         <div className="logo">
-          <a href="/">
-            <img src="/moonlighter-logo.svg" alt="Moonlighter Games" className="logo-image" />
-          </a>
+          <Link to="/">
+            <img src="/moonlighter-logo.png" alt="Moonlighter Games" className="logo-image" />
+          </Link>
         </div>
         
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#lawn-care-simulator">Lawn Care Simulator</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
+            <li><Link to="/lawn-care-simulator" onClick={closeMenu}>Lawn Care Simulator</Link></li>
+            <li><Link to="/news" onClick={closeMenu}>News</Link></li>
+            <li><Link to="/contact" onClick={closeMenu}>Contact Us</Link></li>
           </ul>
         </nav>
         

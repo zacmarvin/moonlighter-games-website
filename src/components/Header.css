@@ -22,11 +22,17 @@
   height: 40px;
   width: auto;
   display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 .logo a {
   text-decoration: none;
   display: inline-block;
+  pointer-events: auto;
 }
 
 .nav-list {
@@ -48,7 +54,7 @@
 }
 
 .nav-list a:hover {
-  color: #4f7942;
+  color: #589253;
 }
 
 .nav-list a::after {
@@ -58,7 +64,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #4f7942;
+  background: #589253;
   transition: width 0.3s ease;
 }
 
