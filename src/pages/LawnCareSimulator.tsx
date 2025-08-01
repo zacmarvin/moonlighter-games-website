@@ -52,6 +52,15 @@ const LawnCareSimulator = () => {
         <div className="game-container">
           <div className="description-content">
             <h3>Mow Your Way to Relaxation</h3>
+            <div style={{ marginBottom: '2rem' }}>
+              <video 
+                src="/lcs-trailer.mp4" 
+                controls 
+                style={{ width: '100%', maxWidth: '800px', borderRadius: '10px' }}
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <p>
               Let the soothing hum of a well-oiled engine wash away your stress. Fire up your equipment and trim 
               every blade of grass in sight. Build your own lawn care empire and unlock new tools, upgrades, 

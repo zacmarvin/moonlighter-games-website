@@ -14,7 +14,7 @@ const PressKit: React.FC = () => {
         <div className="download-section">
           <h2>Download Press Kit</h2>
           <p>
-            Our complete press kit includes logos, screenshots, game descriptions, and company information.
+            Our complete press kit includes logos and screenshots.
           </p>
           <a 
             href="/press-kit/moonlighter-games-press-kit.zip" 
@@ -30,9 +30,6 @@ const PressKit: React.FC = () => {
           <ul>
             <li>Company logos in various formats</li>
             <li>High-resolution game screenshots</li>
-            <li>Game descriptions and fact sheets</li>
-            <li>Company background and history</li>
-            <li>Contact information</li>
           </ul>
         </div>
         
@@ -42,7 +39,7 @@ const PressKit: React.FC = () => {
             For press inquiries, interviews, or additional materials, please contact us at:
           </p>
           <p className="contact-email">
-            <a href="mailto:press@moonlightergames.com">press@moonlightergames.com</a>
+            <a href="mailto:info@moonlightergames.com">info@moonlightergames.com</a>
           </p>
         </div>
       </div>

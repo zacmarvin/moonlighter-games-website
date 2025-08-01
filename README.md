@@ -1,69 +1,153 @@
-# React + TypeScript + Vite
+# Moonlighter Games Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official website for Moonlighter Games, featuring our flagship title Lawn Care Simulator.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19.1.0 + TypeScript
+- Vite 5.4.11
+- React Router DOM
+- Firebase Hosting
+- Formspree (Contact Forms)
+- Mailchimp (Newsletter)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- Node.js (v20.10.0 or higher)
+- npm
+- Firebase CLI (`npm install -g firebase-tools`)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
+```bash
+# Clone the repository
+git clone [repository-url]
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+# Navigate to project directory
+cd "Moonlighter Games Website"
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Local Development Server
+```bash
+npm run dev
 ```
+Opens the site at http://localhost:5173 with hot module replacement.
+
+### Build for Production
+```bash
+npm run build
+```
+Creates optimized production build in the `dist` folder.
+
+### Linting
+```bash
+npm run lint
+```
+
+## Deployment
+
+### Deploy to Firebase Hosting
+```bash
+# Build and deploy in one command
+npm run build && npx firebase deploy --only hosting
+
+# Or separately:
+npm run build
+npx firebase deploy --only hosting
+```
+
+The site will be deployed to:
+- Production: https://moonlightergames.com
+- Firebase URL: https://moonlightergameswebsite.web.app
+
+### Deploy Other Services
+```bash
+# Deploy everything (hosting, functions, firestore)
+npx firebase deploy
+
+# Deploy specific services
+npx firebase deploy --only functions
+npx firebase deploy --only firestore
+```
+
+**Note:** Functions deployment may require PowerShell or Command Prompt on Windows due to Git Bash path issues.
+
+## Project Structure
+
+```
+├── public/              # Static assets (images, favicon)
+├── src/
+│   ├── components/      # Reusable React components
+│   ├── pages/          # Page components
+│   ├── data/           # Data files (news posts)
+│   └── styles/         # Global styles
+├── functions/          # Firebase Cloud Functions
+└── dist/               # Production build (git ignored)
+```
+
+## Features
+
+- **Landing Page**: Split hero showcasing Moonlighter Games and Lawn Care Simulator
+- **About Page**: Company information and team profiles
+- **Game Page**: Lawn Care Simulator details with screenshot gallery
+- **News/Devlog**: Patch notes and development updates
+- **Contact Page**: 
+  - Contact form (via Formspree)
+  - Newsletter signup (via Mailchimp)
+
+## Configuration
+
+### Environment Variables
+Functions use Firebase config for sensitive data:
+```bash
+# Mailchimp (already configured)
+firebase functions:config:get
+
+# To add SendGrid (when ready)
+firebase functions:config:set sendgrid.key="YOUR_API_KEY"
+```
+
+### Form Services
+- **Contact Form**: Formspree endpoint configured in `src/pages/Contact.tsx`
+- **Newsletter**: Mailchimp integration via Firebase Functions
+
+## Common Tasks
+
+### Update Content
+1. Make changes to components/pages
+2. Test locally with `npm run dev`
+3. Build and deploy: `npm run build && npx firebase deploy --only hosting`
+
+### Add News Post
+1. Edit `src/data/newsData.ts`
+2. Add new post object with type, date, content
+3. Deploy changes
+
+### Update Team Photos
+1. Add images to `public/` folder
+2. Reference in components with `/filename.ext`
+3. Deploy changes
+
+## Troubleshooting
+
+### Git Bash Deployment Issues
+Use PowerShell or Command Prompt instead of Git Bash for Firebase deployments.
+
+### CORS Errors
+Functions are configured to accept requests from:
+- https://moonlightergames.com
+- https://www.moonlightergames.com
+- http://localhost:5173
+
+### Build Errors
+- Clear node_modules: `rm -rf node_modules && npm install`
+- Check Node version: `node --version` (should be v20+)
+
+## License
+
+© 2025 Moonlighter Games. All rights reserved.

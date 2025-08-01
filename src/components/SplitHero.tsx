@@ -4,27 +4,17 @@ import './SplitHero.css'
 const SplitHero = () => {
   return (
     <div className="split-hero">
-      {/* Moonlighter Games Section */}
-      <section className="hero-section moonlighter-section">
-        <div className="hero-background">
-          <img src="/moonlightergamesbackdrop.jpg" alt="Moonlighter Games" />
-          <div className="hero-overlay"></div>
-        </div>
-        <div className="hero-content">
-          <img src="/moonlighter-logo.png" alt="Moonlighter Games" className="studio-logo" />
-          <h1>Moonlighter Games</h1>
-          <p className="hero-description">
-            Dedicated to creating memorable gaming experiences that resonate with players worldwide. 
-            We believe in sustainable game development and pure passion for great games.
-          </p>
-          <Link to="/about" className="btn btn-primary">Learn About Us</Link>
-        </div>
-      </section>
-
       {/* Lawn Care Simulator Section */}
       <section className="hero-section game-section">
         <div className="hero-background">
-          <img src="/lawn-care-hero.jpg" alt="Lawn Care Simulator" />
+          <video 
+            src="/lcs-trailer.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-content">
@@ -45,6 +35,23 @@ const SplitHero = () => {
               Wishlist on Steam
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Moonlighter Games Section */}
+      <section className="hero-section moonlighter-section">
+        <div className="hero-background">
+          <img src="/moonlightergamesbackdrop.jpg" alt="Moonlighter Games" />
+          <div className="hero-overlay"></div>
+        </div>
+        <div className="hero-content">
+          <img src="/moonlighter-logo.png" alt="Moonlighter Games" className="studio-logo" />
+          <h1>Moonlighter Games</h1>
+          <p className="hero-description">
+            Dedicated to creating memorable gaming experiences that resonate with players worldwide. 
+            We believe in sustainable game development and pure passion for great games.
+          </p>
+          <Link to="/about" className="btn btn-primary">Learn About Us</Link>
         </div>
       </section>
     </div>
