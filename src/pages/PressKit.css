@@ -1,0 +1,130 @@
+.press-kit {
+  min-height: 100vh;
+  padding: 100px 20px 50px;
+  background-color: #1A361F;
+  color: white;
+}
+
+.press-kit .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.press-kit h1 {
+  font-size: 3rem;
+  color: #FFEA21;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.press-kit .intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #8CBA6E;
+}
+
+.download-section {
+  background-color: #2B5433;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.download-section h2 {
+  color: #FFEA21;
+  margin-bottom: 1rem;
+}
+
+.download-section p {
+  margin-bottom: 2rem;
+  color: #8CBA6E;
+}
+
+.download-button {
+  display: inline-block;
+  background-color: #CB760C;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.download-button:hover {
+  background-color: transparent;
+  border-color: #CB760C;
+  color: #CB760C;
+  transform: translateY(-2px);
+}
+
+.contents-section,
+.contact-section {
+  margin-bottom: 3rem;
+}
+
+.contents-section h2,
+.contact-section h2 {
+  color: #FFEA21;
+  margin-bottom: 1.5rem;
+}
+
+.contents-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contents-section li {
+  padding: 0.5rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: #8CBA6E;
+}
+
+.contents-section li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #589253;
+  font-weight: bold;
+}
+
+.contact-section p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.contact-email a {
+  color: #CB760C;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .press-kit h1 {
+    font-size: 2rem;
+  }
+  
+  .press-kit .intro {
+    font-size: 1rem;
+  }
+  
+  .download-section {
+    padding: 1.5rem;
+  }
+  
+  .download-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}

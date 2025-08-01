@@ -27,6 +27,7 @@ const Header = () => {
             <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
             <li><Link to="/lawn-care-simulator" onClick={closeMenu}>Lawn Care Simulator</Link></li>
             <li><Link to="/news" onClick={closeMenu}>News</Link></li>
+            <li><Link to="/press-kit" onClick={closeMenu}>Press Kit</Link></li>
             <li><Link to="/contact" onClick={closeMenu}>Contact Us</Link></li>
           </ul>
         </nav>

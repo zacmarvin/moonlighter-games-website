@@ -130,7 +130,7 @@ const Contact = () => {
                 <h3>Follow Us</h3>
                 <div className="social-links-inline">
                   <a href="https://www.tiktok.com/@lawncaresimulator" target="_blank" rel="noopener noreferrer">TikTok</a>
-                  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+                  <a href="https://www.youtube.com/@MoonlighterGames" target="_blank" rel="noopener noreferrer">YouTube</a>
                   <a href="https://store.steampowered.com/app/3859750/Lawn_Care_Simulator/" target="_blank" rel="noopener noreferrer">Steam</a>
                 </div>
               </div>

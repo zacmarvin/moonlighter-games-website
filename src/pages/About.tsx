@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './About.css'
 
 const About = () => {
@@ -7,7 +8,7 @@ const About = () => {
         <div className="about-hero-content">
           <h1>Hi, we're Moonlighter Games!</h1>
           <p className="about-subtitle">
-            We're an indie game studio that believes in crafting unique experiences with passion and creativity.
+            An indie game studio that believes in crafting unique experiences with passion and creativity.
           </p>
         </div>
       </section>
@@ -50,13 +51,6 @@ const About = () => {
               </p>
             </div>
             <div className="value-card">
-              <h3>Team Well-being</h3>
-              <p>
-                Happy developers make better games. We prioritize work-life balance and 
-                sustainable development practices.
-              </p>
-            </div>
-            <div className="value-card">
               <h3>Community Driven</h3>
               <p>
                 We listen to our players and involve our community in the development process 
@@ -71,13 +65,29 @@ const About = () => {
         <div className="about-container">
           <h2>Meet the Team</h2>
           <p className="team-intro">
-            We're a diverse group of developers, artists, and dreamers united by our love for games. 
-            From veterans of the industry to fresh talent bringing new perspectives, everyone at 
-            Moonlighter Games contributes to our unique creative vision.
+            We are a pair of industry professionals looking to make our hobbies our professions.
           </p>
-          <div className="team-highlight">
-            <p className="team-size">Current Team Size: Growing!</p>
-            <p className="team-location">Location: Remote-First Global Team</p>
+          <div className="team-grid">
+            <div className="team-member">
+              <div className="member-image-container">
+                <img src="/EdwardDepew.png" alt="Edward Depew" className="member-image" />
+                <div className="member-hover">Edward's favorite movie is Blade Runner: 2049</div>
+              </div>
+              <div className="member-info">
+                <h3 className="member-name">Edward DePew</h3>
+                <p className="member-role">Lead Designer</p>
+              </div>
+            </div>
+            <div className="team-member">
+              <div className="member-image-container">
+                <img src="/ZacMarvin.png" alt="Zac Marvin" className="member-image" />
+                <div className="member-hover">Zac's favorite movie is Interstellar</div>
+              </div>
+              <div className="member-info">
+                <h3 className="member-name">Zac Marvin</h3>
+                <p className="member-role">Lead Programmer</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -90,8 +100,8 @@ const About = () => {
             surprise and delight players. Stay tuned for updates on our journey and upcoming projects!
           </p>
           <div className="cta-section">
-            <a href="#contact" className="btn btn-primary">Get in Touch</a>
-            <a href="#news" className="btn btn-secondary">Follow Our Journey</a>
+            <Link to="/contact" className="btn btn-primary">Get in Touch</Link>
+            <Link to="/news" className="btn btn-secondary">Follow Our Journey</Link>
           </div>
         </div>
       </section>

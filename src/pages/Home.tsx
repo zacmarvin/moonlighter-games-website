@@ -1,9 +1,9 @@
-import Hero from '../components/Hero'
+import SplitHero from '../components/SplitHero'
 
 const Home = () => {
   return (
     <div>
-      <Hero />
+      <SplitHero />
     </div>
   )
 }

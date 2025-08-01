@@ -22,12 +22,29 @@ const LawnCareSimulator = () => {
         <div className="game-hero-background"></div>
         <div className="game-hero-content">
           <h1>Lawn Care Simulator</h1>
-          <h2>Take Back the Yard in Lawntrepreneurs!</h2>
+          <h2>Take Back the Yard in This Lawn Mowing Game!</h2>
           <p className="game-tagline">
             Grab your mower and bring unruly lawns under control. From overgrown backyards to massive estates, 
             cut through the chaos one blade at a time. Satisfyingly slice, edge, and clean your way to perfectly 
             manicured greens — all in a day's mow.
           </p>
+        </div>
+      </section>
+      
+      <section className="screenshots">
+        <div className="game-container">
+          <h3>Screenshots</h3>
+          <div className="screenshot-gallery">
+            {screenshots.map((screenshot) => (
+              <div 
+                key={screenshot.id} 
+                className="screenshot-item"
+                onClick={() => setSelectedImage(screenshot.id)}
+              >
+                <img src={screenshot.src} alt={screenshot.alt} loading="lazy" />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -36,9 +53,9 @@ const LawnCareSimulator = () => {
           <div className="description-content">
             <h3>Mow Your Way to Relaxation</h3>
             <p>
-              Mow away your stress with the soothing hum of a well-oiled engine. Fire up your mower and trim 
+              Let the soothing hum of a well-oiled engine wash away your stress. Fire up your equipment and trim 
               every blade of grass in sight. Build your own lawn care empire and unlock new tools, upgrades, 
-              and equipment – all with the simple satisfaction of cutting grass to a pristine finish.
+              and equipment — all through the simple satisfaction of creating a pristine finish.
             </p>
             <p>
               Relax and unwind in this satisfying lawn mower simulator. Whether you're hedging for perfection 
@@ -75,23 +92,6 @@ const LawnCareSimulator = () => {
               <h4>Creative Freedom</h4>
               <p>Create patterns, stripes, and designs - the lawn is your canvas</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="screenshots">
-        <div className="game-container">
-          <h3>Screenshots</h3>
-          <div className="screenshot-gallery">
-            {screenshots.map((screenshot) => (
-              <div 
-                key={screenshot.id} 
-                className="screenshot-item"
-                onClick={() => setSelectedImage(screenshot.id)}
-              >
-                <img src={screenshot.src} alt={screenshot.alt} loading="lazy" />
-              </div>
-            ))}
           </div>
         </div>
       </section>
