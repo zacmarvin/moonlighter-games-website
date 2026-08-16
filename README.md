@@ -87,8 +87,18 @@ npx firebase deploy --only firestore
 │   ├── data/           # Data files (news posts)
 │   └── styles/         # Global styles
 ├── functions/          # Firebase Cloud Functions
+├── stats-worker/       # Mecha Tag round-stats backend + private dashboard (Cloudflare Worker + D1, NOT Firebase)
 └── dist/               # Production build (git ignored)
 ```
+
+## Mecha Tag stats dashboard (`stats-worker/`)
+
+A separate deployable: a Cloudflare Worker + D1 database that receives one
+aggregate record per finished Mecha Tag round and serves a private dashboard
+(Google sign-in, allow-listed to info@moonlightergames.com) at
+`https://mecha-tag-stats.threetwogun.workers.dev`. It is deployed with
+`wrangler`, not `firebase deploy` — see [`stats-worker/README.md`](stats-worker/README.md)
+for the one-time setup, and the optional `/stats` redirect from this site.
 
 ## Features
 

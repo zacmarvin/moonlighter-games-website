@@ -1,0 +1,6 @@
+node_modules
+.wrangler
+.dev.vars
+.smoke
+.smoke-dev.log
+*.log

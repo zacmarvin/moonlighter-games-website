@@ -1,0 +1,23 @@
+{
+  "name": "mecha-tag-stats-worker",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Mecha Tag round telemetry: Cloudflare Worker + D1 ingest, and the private Google-sign-in dashboard.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create mecha-tag-stats",
+    "db:migrate:local": "wrangler d1 migrations apply mecha-tag-stats --local",
+    "db:migrate": "wrangler d1 migrations apply mecha-tag-stats --remote",
+    "db:seed:local": "node scripts/seed-local.mjs",
+    "db:peek": "wrangler d1 execute mecha-tag-stats --remote --command \"SELECT hour_utc, map, mode, rounds, hunter_wins, painter_wins, abandoned FROM round_stats ORDER BY hour_utc DESC LIMIT 20\"",
+    "db:peek:local": "wrangler d1 execute mecha-tag-stats --local --command \"SELECT hour_utc, map, mode, rounds, hunter_wins, painter_wins, abandoned FROM round_stats ORDER BY hour_utc DESC LIMIT 20\"",
+    "test": "node --test",
+    "smoke": "node scripts/smoke.mjs",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

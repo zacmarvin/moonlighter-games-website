@@ -1,0 +1,24 @@
+# Local-only secrets for `wrangler dev`. Copy to `.dev.vars` (git-ignored).
+# These are NEVER uploaded by `wrangler deploy` — production uses `wrangler secret put`.
+
+# The game's X-Key for POST /r. Anything works locally.
+INGEST_KEY=dev-ingest-key
+
+# HMAC key for the dashboard's session cookie. Anything works locally.
+SESSION_SECRET=dev-session-secret-change-me
+
+# To sign in to the LOCAL dashboard with Google, add http://localhost:8787/auth/callback
+# to the OAuth client's "Authorized redirect URIs" and paste the same client here.
+# Leave empty to just test ingest — the dashboard will show "sign-in not configured".
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+# To run the FULL `npm run smoke` (incl. the /auth/callback checks against the
+# script's fake token endpoint), use these three instead and restart `npm run dev`:
+# GOOGLE_CLIENT_ID=smoke-client-id
+# GOOGLE_CLIENT_SECRET=smoke-client-secret
+# GOOGLE_TOKEN_URL=http://127.0.0.1:8899/token
+
+# Optional overrides (defaults come from wrangler.toml [vars]):
+# ALLOWED_EMAILS=info@moonlightergames.com
+# SESSION_TTL_SECONDS=2592000

@@ -42,6 +42,13 @@ This is a React/TypeScript website built with Vite and hosted on Firebase.
 - Live URL: https://moonlightergames.com
 - Firebase URL: https://moonlightergameswebsite.web.app
 
+### `stats-worker/` — Mecha Tag round stats (separate deployable)
+- Cloudflare Worker + D1, deployed with `wrangler` from that folder — **not** part of `firebase deploy`.
+- Ingest `POST /r` for the game; private dashboard at `/` behind Google sign-in (`ALLOWED_EMAILS` in `wrangler.toml`).
+- Setup/runbook: `stats-worker/README.md`. Design notes: game repo `Mecha Doh/analytics.md`.
+- Secrets (`INGEST_KEY`, `SESSION_SECRET`, `GOOGLE_CLIENT_ID/SECRET`) live in `wrangler secret`, never in files; local dev uses git-ignored `.dev.vars`.
+- Column contract is `stats-worker/src/schema.js` — it must stay in step with `RoundAnalytics.Payload` in the game repo.
+
 ## Deployment Instructions
 
 ### Quick Deploy

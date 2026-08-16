@@ -6,6 +6,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/stats",
+        "destination": "https://mecha-tag-stats.threetwogun.workers.dev/",
+        "type": 302
+      }
+    ],
     "rewrites": [
       {
         "source": "**",

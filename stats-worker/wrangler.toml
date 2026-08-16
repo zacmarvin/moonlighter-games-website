@@ -1,0 +1,33 @@
+# Mecha Tag round telemetry — Cloudflare Worker + D1.
+# Setup steps live in README.md (this file's placeholders are called out there).
+
+name = "mecha-tag-stats"
+main = "src/index.js"
+# Safe floor for the runtime behaviour this Worker relies on (fetch, WebCrypto,
+# D1 batch/upsert). Bumping it later is fine; nothing here needs a newer flag.
+compatibility_date = "2025-06-01"
+
+# Keep the Worker's own observability on so a 500 shows up in the dashboard logs.
+[observability]
+enabled = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mecha-tag-stats"
+# STEP 3 in README.md: replace with the id printed by `wrangler d1 create mecha-tag-stats`.
+# Local `wrangler dev` does not care about this value (it uses a local SQLite file).
+database_id = "422e498c-070c-4db3-8d4b-5cb3b06f284a"
+migrations_dir = "migrations"
+
+[vars]
+# Who may open the dashboard. Comma-separated; case-insensitive.
+ALLOWED_EMAILS = "info@moonlightergames.com"
+# How long a sign-in lasts (seconds). 30 days.
+SESSION_TTL_SECONDS = "2592000"
+
+# Secrets — NEVER put these in this file. Set them once with:
+#   npx wrangler secret put INGEST_KEY          (the game's X-Key; any long random string)
+#   npx wrangler secret put SESSION_SECRET      (any long random string; rotate to log everyone out)
+#   npx wrangler secret put GOOGLE_CLIENT_ID    (from Google Cloud → APIs & Services → Credentials)
+#   npx wrangler secret put GOOGLE_CLIENT_SECRET
+# For local `wrangler dev`, copy .dev.vars.example to .dev.vars instead (git-ignored).
