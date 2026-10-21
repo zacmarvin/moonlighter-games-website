@@ -8,6 +8,7 @@ import LawnCareSimulator from './pages/LawnCareSimulator'
 import News from './pages/News'
 import Contact from './pages/Contact'
 import PressKit from './pages/PressKit'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 import './App.css'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/press-kit" element={<PressKit />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
         <NotificationManager />

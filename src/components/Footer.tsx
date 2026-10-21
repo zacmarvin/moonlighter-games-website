@@ -60,7 +60,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>&copy; {currentYear} Moonlighter Games. All rights reserved.</p>
         <div className="footer-links">
-          <a href="#privacy">Privacy Policy</a>
+          <Link to="/privacy">Privacy Policy</Link>
           <a href="#terms">Terms of Service</a>
         </div>
       </div>
